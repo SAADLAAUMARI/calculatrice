@@ -14,9 +14,7 @@ import java.util.Stack;
 public class MainActivity extends AppCompatActivity {
     private TextView bord;
     private StringBuilder equation;
-
     private static final String KEY_EQUATION = "equation";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
         // Vérifier si l'orientation a changé en mode paysage
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             setContentView(R.layout.activity_main_landscape);
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             case "ln":
                 handleLogarithmicFunction(buttonText);
                 break;
-            case "π":
+            case "pi":
                 equation.append(Math.PI);
                 bord.setText(equation.toString());
                 break;
@@ -113,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "!":
                 handleFactorial();
+                break;
+            case "^":
+                handlePower();
                 break;
             default:
                 equation.append(buttonText);
@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
      }
  }
     private void handleTrigonometricFunction(String function) {
+        bord.setText(function);
         if (equation.length() > 0) {
             double operand = Double.parseDouble(equation.toString());
             double result;
@@ -170,6 +171,17 @@ public class MainActivity extends AppCompatActivity {
             equation.append(result);
         }
     }
+    private void handlePower() {
+        if (equation.length() > 0) {
+            double number = Double.parseDouble(equation.toString());
+            double result = Math.pow(number, 2); // Calcul de la puissance au carré
+            bord.setText(String.valueOf(result));
+            equation.setLength(0); // Efface l'équation
+            equation.append(result); // Met à jour l'équation avec le résultat de la puissance
+        }
+    }
+
+
     private void handleFactorial() {
         if (equation.length() > 0) {
             int number = Integer.parseInt(equation.toString());

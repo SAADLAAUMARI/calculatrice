@@ -18,7 +18,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFEB3B"
                 android:gravity="center"
@@ -31,7 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginBottom="10sp"
                 android:orientation="horizontal">
 
@@ -58,7 +58,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginBottom="10sp"
                 android:orientation="horizontal">
 
@@ -98,12 +98,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#FF9800"
+                    android:onClick="onButtonClick"
                     android:text="+"
                     android:textColor="#FFFFFF"
                     android:textColorHighlight="#040404"
                     android:textColorHint="#000000"
                     android:textColorLink="#000000"
-                    android:onClick="onButtonClick"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -256,7 +256,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="0sp"
                 android:orientation="horizontal">
 
@@ -293,10 +293,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#FF9800"
+                    android:onClick="onButtonClick"
                     android:text="AC"
                     android:textColorHighlight="#040404"
                     android:textColorLink="#000000"
-                    android:onClick="onButtonClick"
                     android:textSize="14sp" />
             </LinearLayout>
 
